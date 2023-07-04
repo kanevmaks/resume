@@ -1,0 +1,32 @@
+{{#with footer}}
+<footer>
+    <hr class="my-5">
+    <div>
+        {{#with social}}
+        {{>link text=email.text href=email.href blank=true }}
+        {{>link text=phone.text href=phone.href blank=true }}
+        {{>link text=linkedin.text href=linkedin.href blank=true }}
+        {{/with}}
+    </div>
+
+    <div class="my-3">
+        <em>Copyright by {{../header.name.firstname}} {{../header.name.lastname}}</em>
+    </div>
+    <br>
+    <address>
+        <div>
+            <em>Адреса:{{../header.address}}</em>
+        </div>
+        {{#unless noline}}
+
+        {{#if line}}
+        ---
+        {{else}}
+
+        {{/if}}
+
+        {{/unless}}
+    </address>
+
+</footer>
+{{/with}}

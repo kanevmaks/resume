@@ -1,21 +1,71 @@
-{{!-- 
+{{! 
   Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
   І котрий обгортає код container файлів для будь-яких ендпоїнтів
---}}
-<!DOCTYPE html>
+}}
+
 <html>
 
   <head>
     <title>
-      Page name
+      {{page.title}}
     </title>
     <meta charset='utf-8' />
     <link href='css/index.css' rel='stylesheet' />
   </head>
 
   <body>
-    {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
+{{#with header}}
+  <header>
+    <div>
+      <h1>{{name.firstname}} {{name.lastname}}</h1>
+    </div>
+    <div>
+      <b>{{position}}</b>
+    </div>
+    <br />
+  <div>
+  <em> 
+    <salary>
+      {{money}}
+    </salary>
+  </em>
+  </div>
+  <br />
+  <div>
+    <address>{{address}}</address>
+  </div>
+    <br />
+    <hr />
+  </header>
+{{/with}}
+  
+{{> nav}}
+    {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
     {{{body}}}
+
+
+    {{#with footer}}
+  <footer>
+    <hr />
+    <br />
+    {{#with social}}
+    {{>link text=email.text href=email.href blank=true}}
+    {{>link text=phone.text href=phone.href blank=true}}
+    {{>link text=linkedin.text href=linkedin.href blank=true}}
+    {{/with}}
+    <br>
+    <div>
+      <em>
+        Copyrigt by Maksim Kanevskiy
+      </em>
+    </div>
+    <br />
+    <div>
+      <address>{{../header/address}}</address>
+    </div>
+
+  </footer>
+  {{/with}}
   </body>
 
 </html>
