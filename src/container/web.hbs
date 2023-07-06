@@ -1,0 +1,126 @@
+<div>
+    <main class="m-5">
+        {{#with web.languages}}
+        <div>
+            {{#with [0]}}
+            <ul>
+                <h2>{{name}}</h2>
+                <hr>
+                <li>
+                    <p><b> Version: </b> {{version}}</p>
+                </li>
+                <li>
+                    <p><b> Description: </b> {{description}}</p>
+                </li>
+                <li> <b> Elements: </b>
+                    <ul>
+                        {{#with elements.[0]}}
+                        <li>
+                            <p><b>{{name}}</b>: - {{description}}</p>
+                            {{#with attributes}}
+                            <h3>Attributes: </h3>
+                            <p><b>{{[1].name}}</b>: - {{[1].description}}</p>
+                            <p><b>{{[0].name}}</b>: - {{[0].description}}</p>
+                            {{/with}}
+                        </li>
+                        {{/with}}
+
+                        <hr>
+
+                        {{#with elements.[1]}}
+                        <li>
+                            <p><b>{{name}}</b>: - {{description}}</p>
+                            {{#with attributes}}
+                            <h3>Attributes: </h3>
+                            <p><b>{{[0].name}}</b>: - {{[0].description}}</p>
+                            <p><b>{{[1].name}}</b>: - {{[1].description}}</p>
+                            {{/with}}
+                        </li>
+                        {{/with}}
+                    </ul>
+                </li>
+            </ul>
+            {{/with}}
+            <hr>
+            {{#with [1]}}
+            <ul>
+                <h2>{{name}}</h2>
+                <hr>
+                <li>
+                    <p><b> Version: </b> {{version}}</p>
+                </li>
+                <li>
+                    <p><b> Description: </b> {{description}}</p>
+                </li>
+                <li> <b> Elements: </b>
+                    <ul>
+                        {{#with properties.[0]}}
+                        <li>
+                            <p><b>{{name}}</b>: - {{description}}</p>
+                            {{#with values}}
+                            <h3>Values: </h3>
+                            <p><b>{{[1].name}}</b>: - {{[1].description}}</p>
+                            <p><b>{{[0].name}}</b> - {{[0].description}}</p>
+                            {{/with}}
+                        </li>
+                        {{/with}}
+
+
+                        <hr>
+
+                        {{#with properties.[1]}}
+                        <li>
+                            <p><b>{{name}}</b> - {{description}}</p>
+                            {{#with values}}
+                            <h3>Values: </h3>
+                            <p><b>{{[0].name}}</b> - {{[0].description}}</p>
+                            <p><b>{{[1].name}}</b> - {{[1].description}}</p>
+                            {{/with}}
+                        </li>
+                        {{/with}}
+                    </ul>
+                </li>
+            </ul>
+            {{/with}}
+            <hr>
+            {{#with [2]}}
+            <ul>
+                <h2>{{name}}</h2>
+                <hr>
+                <li>
+                    <p><b> Version: </b> {{version}}</p>
+                </li>
+                <li>
+                    <p><b> Description: </b> {{description}}</p>
+                </li>
+                <li> <b> Elements: </b>
+                    <ul>
+                        {{#with functions.[0]}}
+                        <li>
+                            <p><b>{{name}}</b> - {{description}}</p>
+                            {{#with parameters}}
+                            <h3>Parameters: </h3>
+                            <p><b>{{[0].name}}</b> - {{[0].description}} (type: {{[0].-type}})</p>
+                            {{/with}}
+                        </li>
+                        {{/with}}
+
+                        <hr>
+
+                        {{#with functions.[1]}}
+                        <li>
+                            <p><b>{{name}}</b> - {{description}}</p>
+                            {{#with parameters}}
+                            <h3>Parameters: </h3>
+                            <p><b>{{[0].name}}</b> - {{[0].description}} (type: {{[0].type}})</p>
+                            {{/with}}
+                        </li>
+                        {{/with}}
+                    </ul>
+                </li>
+            </ul>
+            {{/with}}
+        </div>
+        {{/with}}
+    </main>
+</div>
