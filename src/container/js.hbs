@@ -1,0 +1,83 @@
+<div>
+    <main>
+        <div>
+            <h1>JavaScript</h1>
+        </div>
+        <div>
+            <p><b>Name: </b>{{name}}</p>
+            <p><b>Description: </b>{{description}}</p>
+        </div>
+        <br>
+        <div>
+            <p><b>History:</p>
+            {{#with history}}
+            <p><em><b>Year: </b></em>{{year}}</p>
+            <p><em><b>Founder: </b></em>{{founder}}</p>
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            <p>Types:</p>
+            {{#each types}}
+            <em>
+                <ul>
+                    <li> {{this}}</li>
+                </ul>
+            </em>
+            {{/each}}
+        </div>
+        <br>
+        <div>
+            <p>Syntax:</p>
+            {{#with syntax}}
+            <p><b>Variables: </b>{{variables}}</p>
+            <p>Functions: {{functions}}</p>
+            <p>Loops: {{loops}}</p>
+            <p>Classes: {{classes}}</p>
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            <p>Features:</p>
+            {{#each features}}
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+            {{/each}}
+        </div>
+        <br>
+        <div>
+            <p> Libraries:</p>
+
+            {{#each libraries}}
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+            {{/each}}
+        </div>
+        <br>
+        <div>
+            <p>Tools:</p>
+            {{#each tools}}
+            <ul>
+                <li>{{this}}</li>
+            </ul>
+            {{/each}}
+        </div>
+        <br>
+        <div>
+            <p>Community:</p>
+            {{#each community}}
+            <p>Name: {{name}}</p>
+            <p>Type: {{type}}</p>
+            <br>
+            {{/each}}
+        </div>
+
+    </main>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
