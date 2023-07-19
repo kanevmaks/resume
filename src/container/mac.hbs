@@ -1,0 +1,160 @@
+<main>
+    <div>
+        <h1>Mac</h1>
+    </div>
+    <div>
+        <p><b>Name: </b>{{name}}</p>
+        <p><b>Description: </b>{{decription}}</p>
+        <p><b>Price: </b>{{price}}</p>
+        <p><b>Category: </b>{{category}}</p>
+    </div>
+    <hr>
+    <div>
+        <h2>Features</h2>
+    </div>
+
+    <div>
+        {{#with features}}
+        <div>
+            <h3>
+                <p>Processor:</p>
+            </h3>
+        </div>
+
+        <div>
+            {{#with processor}}
+            <p><b>Brand: </b>{{brand}}</p>
+            <p><b>Model: </b>{{model}}</p>
+            <p><b>Speed: </b>{{speed}}</p>
+            <p><b>Cores: </b>{{cores}}</p>
+            <p><b>Cashe: </b>{{cashe}}</p>
+            {{/with}}
+        </div>
+        <hr>
+        <div>
+            <h3>
+                <p>Memory:</p>
+            </h3>
+            <div>
+                {{#with memory}}
+                <p><b>Type: </b>{{type}}</p>
+                <p><b>Size: </b>{{size}}</p>
+                <P><b>Speed: </b>{{speed}}</P>
+                {{/with}}
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h3>Storage:</h3>
+            <div>
+                {{#with storage}}
+                <p><b>Type: </b>{{type}}</p>
+                <p><b>Size: </b>{{size}}</p>
+                {{/with}}
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h3>Display: </h3>
+            <div>
+                {{#with display}}
+                <p><b>Size: </b>{{size}}</p>
+                <p><b>Resolution: </b>{{resolution}}</p>
+                <p><b>Technology: </b>{{technology}}</p>
+                <p><b>Color space: </b>{{color_spase}}</p>
+                <p><b>Brightness: </b>{{brightness}}</p>
+                <p><b>Refresh rate: </b>{{refresh_rate}}</p>
+                {{/with}}
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h3>Graphics:</h3>
+            <div>
+                {{#with graphics}}
+                <p><b>Brand: </b>{{brand}}</p>
+                <p><b>Model: </b>{{model}}</p>
+                <p><b>Memory: </b>{{memory}}</p>
+                {{/with}}
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h3>Ports</h3>
+            <div>
+                {{#each ports}}
+                <p><b>Type: </b>{{type}}</p>
+                <p><b>Count: </b>{{count}}</p>
+
+                <div>
+                    {{#if features}}<h4>Features:</h4>{{/if}}
+                    {{#each features}}
+                    <ul>
+                        <li> {{this}}</li>
+                    </ul>
+                    {{/each}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h3>Battery</h3>
+            <div>
+                {{#with battery}}
+                <p><b>Type: </b>{{type}}</p>
+                <p><b>Capacity: </b>{{capacity}}</p>
+                <p><b>Life: </b>{{life}}</p>
+                {{/with}}
+                <p><b>Weight: </b>{{weight}}</p>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <h3>Dimensions:</h3>
+            <div>
+                {{#with dimensions}}
+                <p><b>Height: </b>{{height}}</p>
+                <p><b>Width: </b>{{width}}</p>
+                <p><b>Depth: </b>{{depth}}</p>
+                {{/with}}
+            </div>
+        </div>
+        <hr>
+        <div>
+            <p>
+            <h3>Operation system:</h3>{{operating_system}}
+            </p>
+        </div>
+        <hr>
+        <div>
+            <h3>Accessories: </h3>
+            <div>
+                {{#each accessories}}
+                <ul>
+                    <li>
+                        <p><b>Name: </b>{{name}}</p>
+                        <p><b>Price: </b>{{price}}</p>
+                    </li>
+                </ul>
+
+                {{/each}}
+            </div>
+        </div>
+        {{/with}}
+    </div>
+
+</main>
+
+
+
+
+
+
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
