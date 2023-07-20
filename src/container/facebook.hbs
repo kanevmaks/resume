@@ -1,0 +1,109 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+
+<main>
+
+    <div>
+        <h1>Social network</h1>
+        <h2>Facebook</h2>
+        <h3>
+            <p><b>Name: </b>{{name}}</p>
+        </h3>
+    </div>
+    <hr>
+    <div>
+        <div>
+            <div>
+                <h3>Users:</h3>
+            </div>
+
+            <div>
+                {{#each users}}
+                <div>
+                    <div>
+                        <p><b>ID: </b>{{id}}</p>
+                        <p><b>Name: </b>{{name}}</p>
+                        <p><b>Gender: </b>{{gender}}</p>
+                        <p><b>Age: </b>{{age}}</p>
+                    </div>
+                    <section>
+                        <h3><b>Friends:</b></h3>
+
+                        {{#each friends}}
+
+                        <p><b>ID: </b>{{id}}</p>
+                        <p><b> Groups:</b></p>
+
+                        {{#each groups}}
+                        <p><b>ID: </b>{{id}}</p>
+                        <p><b>Name: </b>{{name}}</p>
+                        <p><b>Description: </b>{{description}}</p>
+                        <p><b>Members: </b></p>
+                        <section>
+                            {{#each members}}
+                            <p><b>ID: </b>{{id}}</p>
+                            <p><b>Name: </b>{{name}}</p>
+                            <p><b>Gender: </b>{{gender}}</p>
+                            <p><b>Age: </b>{{age}}</p>
+                            {{/each}}
+                            {{/each}}
+                            <p><b>Name: </b>{{name}}</p>
+                            <p><b>Gender: </b>{{gender}}</p>
+                            <p><b>Age: </b>{{age}}</p>
+                            <section>
+                                <h4>Mutual friends</h4>
+                                {{#each mutual_friends}}
+
+                                <p><b>ID: </b>{{id}}</p>
+                                <p><b>Name: </b>{{name}}</p>
+                                <p><b>Gender: </b>{{gender}}</p>
+                                <p><b>Age: </b>{{age}}</p>
+                                <section>
+
+                                    {{#each mutual_friends}}
+
+                                    <p><b>ID: </b>{{id}}</p>
+                                    <p><b>Name: </b>{{name}}</p>
+                                    <p><b>Gender: </b>{{gender}}</p>
+                                    <p><b>Age: </b>{{age}}</p>
+                                </section>
+                                {{/each}}
+                            </section>
+                            <br>
+                            {{/each}}
+                        </section>
+                        <hr>
+                        {{/each}}
+                </div>
+                </section>
+                <section>
+                    {{#if groups}}<h3>Groups</h3>{{/if}}
+                    {{#each groups}}
+                    <p><b>ID: </b>{{id}}</p>
+                    <p><b>Name: </b>{{name}}</p>
+                    <p><b>Description: </b>{{description}}</p>
+                    <p><b>Members: </b></p>
+                    <section>
+                        {{#each members}}
+                        <p><b>ID: </b>{{id}}</p>
+                        <p><b>Name: </b>{{name}}</p>
+                        <p><b>Gender: </b>{{gender}}</p>
+                        <p><b>Age: </b>{{age}}</p>
+                        {{/each}}
+                    </section>
+
+                    {{/each}}
+                </section>
+
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <hr>
+    </div>
+
+
+</main>
