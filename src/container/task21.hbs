@@ -1,0 +1,136 @@
+<main class="m-5">
+     <div class="card">
+           <div class="card-body">
+            <div class="card">
+                <div class="card-body">
+
+                    <h1 class=" text-capitalize">heading</h1>
+                    {{#with heading}}
+                    <div>
+                        {{#with main}}
+                        <p class="text-uppercase">{{title}}</p>
+                        <p class="text-lowercase">{{text}}</p>
+                        <button class="btn btn-primary">{{button_text.solid}}</button>
+                    </div>
+                     <br>
+                     <div>
+                    {{#with button_text}}
+                    <p class="text-uppercase">{{title}}</p>
+                    <p class="text-lowercase">{{text}}</p>
+                    <button class="btn btn-outline-primary">{{outline}}</button>
+                    {{/with}}
+                    </div>
+                    {{/with}}
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="card">
+                <div class="card-body">
+                 <h2 class=" text-capitalize">Heading second</h2>
+                 {{#with second}}
+                        <p class="text-uppercase">{{title}}</p>
+                        <p class="text-lowercase">{{text}}</p>
+                        <button class="btn btn-secondary">{{button_text.solid}}</button>
+                    
+                     <br>
+                     <div>
+                    {{#with button_text}}
+                    <p class="text-uppercase">{{title}}</p>
+                    <p class="text-lowercase">{{text}}</p>
+                    <button class="btn btn-outline-secondary">{{outline}}</button>
+                    {{/with}}
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="card">
+                <div class="card-body">
+                 <h2 class=" text-capitalize">Heading subblock</h2>
+                 {{#with subblock}}
+                        <p class="text-uppercase">{{title}}</p>
+                        <p class="text-lowercase">{{text}}</p>
+                        <button class="btn btn-dark">{{button_text.solid}}</button>
+                    
+                     <br>
+                     <div>
+                    {{#with button_text}}
+                    <p class="text-uppercase">{{title}}</p>
+                    <p class="text-lowercase">{{text}}</p>
+                    <button class="btn btn-outline-dark">{{outline}}</button>
+                    {{/with}}
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/with}}
+
+    <hr>
+    <br>
+    <hr>
+    <div class="card">
+        <div class=" display-1 text-capitalize">nested display</div>
+        <br>
+
+
+        {{#with nested_display}}
+
+        <div class="card-body">
+            <div class="card">
+                <div class="card-body">
+                    <p>title: {{title}}</p>
+                    <div class="display-4 text-capitalize">children_display</div>
+                    <br>
+                    {{#with children_display}}
+                    <p class="text-uppercase">{{title}}</p>
+                    <p class="text-lowercase">{{text}}</p>
+                    <button class="btn btn-outline-warning">{{button.text}}</button>
+                    {{/with}}
+                </div>
+            </div>
+            <p>
+            <h6>Header text: {{header_text}}</h6>
+            <button class="btn btn-info">{{button.text}}</button>
+            </p>
+        </div>
+        {{/with}}
+    </div>
+
+    <br>
+
+    <div class="card">
+        <div class="card-body">
+
+            {{#with paragraph}}
+            <p class="text-uppercase">{{title}}</p>
+            <p class="text">{{text}}</p>
+            <button class=" btn btn-outline-link text-primary">{{button.text}}</button>
+            <div class="card">
+                <div class="card-body">
+                    <ul>
+                        {{#each list_name}}
+                        <li>
+                            <a class="btn btn-outline-link text-primary" href="{{url}}">{{text}}</a>
+                        </li>
+                        {{/each}}
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    {{/with}}
+
+
+
+</main>
