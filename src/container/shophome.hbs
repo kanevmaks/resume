@@ -1,0 +1,75 @@
+{{#with goodsBlock}}
+    <ul class="nav nav-tabs mb-5">
+        {{#each tabs}}
+        <li class="nav-link {{#if isActive}} active {{/if}} {{#if isDisabled}} disabled {{/if}}">
+            {{text}}
+        </li>
+        {{/each}}
+    </ul>
+    <div class="row g-3">
+        {{#each cards}}
+
+        <div class="col-4">
+            <div class="col-12">
+                <div class="text-bg-secondary">
+                    <div>
+                        <img class="card-img-top" src="{{image}}">
+                    </div>
+                </div>
+
+                <h5 class="card-title pb-3">{{title}}
+                    {{#if isHot}}
+                    <div class="badge rounded-pill bg-primary">Hot</div>
+                    {{/if}}
+                    {{#if isNew}}
+                    <div class="badge rounded-pill bg-primary">New</div>
+                    {{/if}}
+                </h5>
+                <div class="card-body">{{description}}</div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+    <hr class="mt-5 mb-5">
+    {{#with subscribe}}
+    <div class="row">
+        <div class="text-bg-dark">
+            <div class="card-body">
+                <h2>{{header}}</h2>
+            </div>
+            <div>{{description}}</div>
+            {{#each buttons}}
+            <div class="py-1">
+                <button href="{{link}}" class="btn btn-primary">{{text}}</button>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    {{/with}}
+    <hr class="mt-5 mb-5">
+    {{#with service}}
+    <div class="card text-center text-bg-success">
+        <h2>{{title}}</h2>
+        <div class="card-dody">
+            {{description}}
+        </div>
+        {{#each buttons}}
+        <div class="p-1">
+            <button class="btn btn-primary" href="{{link}}">{{text}}</button>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+    <hr class="mt-5 mb-5">
+    {{#each footer}}
+    <ul class="row col-2">
+        {{#each this}}
+
+        <li class="btn">
+            <a href="{{link}}" class="btn btn-link {{#if @last}}disabled{{/if}}">{{text}} </a>
+        </li>
+        {{/each}}
+    </ul>
+
+    {{/each}}

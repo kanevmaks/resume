@@ -13,34 +13,39 @@
 			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
 
-  <body>
+  <body class="p-5">
 {{#with header}}
   <header>
-    <div>
+    <div class="mb-2">
       <h1>{{name.firstname}} {{name.lastname}}</h1>
     </div>
-    <div>
+    <div class="mb-2">
       <b>{{position}}</b>
     </div>
     <br />
   <div>
+    <div class="mb-2">
   <em> 
-    <salary>
       {{money}}
-    </salary>
   </em>
   </div>
+  </div>
   <br />
-  <div>
+  <div class="mb-2">
     <address>{{address}}</address>
   </div>
     <br />
-    <hr />
+    <hr class="my-5">
   </header>
 {{/with}}
   
-{{> nav}}
-    {{{body}}}
+<div class="my-5 ">
+  {{> nav}}
+</div>
+
+
+
+{{{body}}}
 
 {{>footer}}
 
