@@ -1,0 +1,28 @@
+<main class='m-5'>
+  <section class='row'>
+    <div class='card'>
+      <div class='card-body '>
+        {{#with header}}
+          <div class='mb-2'>
+            <h3>{{name.firstname}} {{name.lastname}}</h3>
+          </div>
+        {{/with}}
+        <h4 class='text-end'>{{project}}</h4>
+      </div>
+    </div>
+    <h4>{{list_name}}</h4>
+    <div class='mt-4'>
+      <p>{{description}}</p>
+    </div>
+    {{#each buttons}}
+      <div class='col-4 mt-2'>
+        <a
+          href='{{link}}'
+          class='btn btn-primary'
+        >{{text}}</a>
+      </div>
+    {{/each}}
+
+  </section>
+
+</main>
